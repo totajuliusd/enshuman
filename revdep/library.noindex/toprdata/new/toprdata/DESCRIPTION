@@ -1,0 +1,26 @@
+Package: toprdata
+Title: Gene and Exon Data from Ensembl
+Version: 2.0.0
+Authors@R: c(
+    person("Thorhildur", "Juliusdottir", role = c("cph","aut", "cre"),email = "totajuliusd@gmail.com"),
+    person("Andri", "Stefansson", role = "aut", email = "andrimarstefansson@gmail.com")
+    )
+Description: Gene information from Ensembl genome builds GRCh38.111 and GRCh37.87 to use with the 'topr' package.
+License: LGPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, markdown
+Config/testthat/edition: 3
+Imports:
+Depends: R (>= 3.5.0)
+RemoteType: local
+RemoteUrl: /Users/tota/github/toprdata
+NeedsCompilation: no
+Packaged: 2024-01-28 17:52:25 UTC; tota
+Author: Thorhildur Juliusdottir [cph, aut, cre],
+  Andri Stefansson [aut]
+Maintainer: Thorhildur Juliusdottir <totajuliusd@gmail.com>
+Built: R 4.2.3; ; 2024-01-28 17:52:25 UTC; unix

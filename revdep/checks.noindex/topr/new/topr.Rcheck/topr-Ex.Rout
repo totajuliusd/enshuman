@@ -1,0 +1,525 @@
+
+R version 4.2.3 (2023-03-15) -- "Shortstop Beagle"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "topr"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('topr')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("annotate_with_nearest_gene")
+> ### * annotate_with_nearest_gene
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: annotate_with_nearest_gene
+> ### Title: Get the nearest gene for one or more snps
+> ### Aliases: annotate_with_nearest_gene
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D variants <-get_lead_snps(CD_UKBB)
+> ##D annotate_with_nearest_gene(variants)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("create_snpset")
+> ### * create_snpset
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: create_snpset
+> ### Title: Create a dataframe that can be used as input for making effect
+> ###   plots
+> ### Aliases: create_snpset
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D create_snpset(CD_UKBB,CD_FINNGEN, thresh=1e-09)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("create_snpset_code")
+> ### * create_snpset_code
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: create_snpset_code
+> ### Title: Show the code/functions used to create a snpset
+> ### Aliases: create_snpset_code
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D create_snpset_code()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("effect_plot")
+> ### * effect_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: effect_plot
+> ### Title: Create a plot comparing effects within two datasets
+> ### Aliases: effect_plot
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D effect_plot(dat)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("effectplot")
+> ### * effectplot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: effectplot
+> ### Title: Create a plot comparing variant effects in two datasets
+> ### Aliases: effectplot
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D effectplot(list(CD_UKBB, CD_FINNGEN))
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("flip_to_positive_allele_for_dat1")
+> ### * flip_to_positive_allele_for_dat1
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: flip_to_positive_allele_for_dat1
+> ### Title: Flip to the positive allele for dataset 1
+> ### Aliases: flip_to_positive_allele_for_dat1
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D CD_UKBB_index_snps <- get_lead_snps(CD_UKBB)
+> ##D snpset <- get_snpset(CD_UKBB_index_snps, CD_FINNGEN)
+> ##D flip_to_positive_allele_for_dat1(snpset$matched)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_best_snp_per_MB")
+> ### * get_best_snp_per_MB
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_best_snp_per_MB
+> ### Title: Get the index/lead variants
+> ### Aliases: get_best_snp_per_MB
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D   get_best_snp_per_MB(CD_UKBB)
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_gene")
+> ### * get_gene
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_gene
+> ### Title: Get the genetic position of a gene by gene name
+> ### Aliases: get_gene
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_gene("FTO")
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_gene_coords")
+> ### * get_gene_coords
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_gene_coords
+> ### Title: Get the genetic position of a gene by gene name
+> ### Aliases: get_gene_coords
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_gene_coords("FTO")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_genes_by_Gene_Symbol")
+> ### * get_genes_by_Gene_Symbol
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_genes_by_Gene_Symbol
+> ### Title: Get the genetic position of a gene by its gene name
+> ### Aliases: get_genes_by_Gene_Symbol
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D   get_genes_by_Gene_Symbol(c("FTO","THADA"))
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_genes_in_region")
+> ### * get_genes_in_region
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_genes_in_region
+> ### Title: Get SNPs/variants within region
+> ### Aliases: get_genes_in_region
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_genes_in_region(region="chr16:50593587-50834041")
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_lead_snps")
+> ### * get_lead_snps
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_lead_snps
+> ### Title: Get the index/lead variants
+> ### Aliases: get_lead_snps
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_lead_snps(CD_UKBB)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_overlapping_snps_by_pos")
+> ### * get_overlapping_snps_by_pos
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_overlapping_snps_by_pos
+> ### Title: Get variants that overlap between two datasets
+> ### Aliases: get_overlapping_snps_by_pos
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_overlapping_snps_by_pos(dat1, dat2)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_snps_within_region")
+> ### * get_snps_within_region
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_snps_within_region
+> ### Title: Get SNPs/variants within region
+> ### Aliases: get_snps_within_region
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_snps_within_region(CD_UKBB, "chr16:50593587-50834041")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_snpset")
+> ### * get_snpset
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_snpset
+> ### Title: Create a dataframe that can be used as input for making effect
+> ###   plots
+> ### Aliases: get_snpset
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D CD_UKBB_index_snps <-get_lead_snps(CD_UKBB)
+> ##D get_snpset(CD_UKBB_index_snps, CD_FINNGEN)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_snpset_code")
+> ### * get_snpset_code
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_snpset_code
+> ### Title: Show the code/functions used to get a snpset
+> ### Aliases: get_snpset_code
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_snpset_code()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_top_snp")
+> ### * get_top_snp
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_top_snp
+> ### Title: Get the top hit from the dataframe
+> ### Aliases: get_top_snp
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_top_snp(CD_UKBB, chr="chr1")
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("get_topr_colors")
+> ### * get_topr_colors
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: get_topr_colors
+> ### Title: Get the top hit from the dataframe
+> ### Aliases: get_topr_colors
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D get_topr_colors()
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("locuszoom")
+> ### * locuszoom
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: locuszoom
+> ### Title: Create a locuszoom-like plot
+> ### Aliases: locuszoom
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D locuszoom(R2_CD_UKBB)
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("manhattan")
+> ### * manhattan
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: manhattan
+> ### Title: Create a Manhattan plot
+> ### Aliases: manhattan
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D manhattan(CD_UKBB)
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("match_alleles")
+> ### * match_alleles
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: match_alleles
+> ### Title: Match the variants in the snpset by their alleles
+> ### Aliases: match_alleles
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D match_alleles(df)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("match_by_alleles")
+> ### * match_by_alleles
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: match_by_alleles
+> ### Title: Match the variants in the snpset by their alleles
+> ### Aliases: match_by_alleles
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D CD_UKBB_lead_snps <- get_lead_snps(CD_UKBB)
+> ##D snpset <- get_snpset(CD_UKBB_lead_snps, CD_FINNGEN)
+> ##D match_by_alleles(snpset$found)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("match_by_pos")
+> ### * match_by_pos
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: match_by_pos
+> ### Title: Get variants that overlap between two datasets
+> ### Aliases: match_by_pos
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D CD_UKBB_index_snps <- get_lead_snps(CD_UKBB)
+> ##D match_by_pos(CD_UKBB_index_snps, CD_FINNGEN)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("qqtopr")
+> ### * qqtopr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: qqtopr
+> ### Title: Create a quantile quantile (QQ) plot
+> ### Aliases: qqtopr
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D qqtopr(CD_UKBB)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("regionplot")
+> ### * regionplot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: regionplot
+> ### Title: Create a regionplot
+> ### Aliases: regionplot
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D regionplot(CD_UKBB, gene="IL23R")
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("topr")
+> ### * topr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: topr
+> ### Title: topr
+> ### Aliases: topr
+> 
+> ### ** Examples
+> 
+> library(topr)
+> # Create a manhattan plot using
+> manhattan(CD_UKBB)
+> 
+> # Create a regional plot
+> regionplot(CD_UKBB, gene="IL23R")
+Error: 'ENSGENES' is not an exported object from 'namespace:toprdata'
+Execution halted

@@ -1,0 +1,7 @@
+ENSEXONS                Ensembl exons build HG38-104-5-2
+ENSEXONS_37             Ensembl exons build HG37 (GRCh37) v40 from
+                        gencode
+ENSGENES                Ensembl genes build HG38.104-5-2
+ENSGENES_37             Ensembl genes build HG37 (GRCh37) v40 from
+                        gencode
+toprdata                toprdata

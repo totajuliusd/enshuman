@@ -1,0 +1,16 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^revdep$
+^_pkgdown\.yml$
+^docs$
+Dockerfile.*
+Makefile
+^LICENSE\.md$
+^\.git*
+.Renviron
+.Rhistory
+.gitignore
+..Rcheck
+pkgdown
+.idea
+^cran_comments.md
